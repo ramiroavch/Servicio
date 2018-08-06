@@ -18,4 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/AgregarHistoria', 'RedirectionsController@AgregarHistoria')->name('AgregarHistoria');
+
+Route::get('/AgregarHistoriaNo', 'RedirectionsController@AgregarHistoriaNo')->name('AgregarHistoriaNo');
  

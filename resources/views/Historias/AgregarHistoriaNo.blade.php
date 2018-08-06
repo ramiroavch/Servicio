@@ -8,17 +8,17 @@
 @endsection
 
 @section('title')
-<h2 class="font-bold">Buscar Historia</h2>
+<h2 class="font-bold">Agregar Nueva Historia</h2>
 @endsection
 @section('Menu')
 <li class="active">
 	<a href=""><i class="fa fa-edit"></i><span class="nav-label">Historias</span><span class="fa arrow">
 	</span></a>
 	<ul class="nav nav-second-level">
-    	<li class="active">
-    		<a href="">Buscar Historia</a>
-    	</li>
     	<li>
+    		<a href="/home">Buscar Historia</a>
+    	</li>
+    	<li class="active">
     		<a>
     			<span class="nav-label">Agregar Historia
     			</span>
@@ -29,8 +29,8 @@
 				<li>
     				<a href="/AgregarHistoria">Oncológico</a>
     			</li>
-    			<li>
-    				<a href="/AgregarHistoriaNo">No Oncológico</a>
+    			<li  class="active">
+    				<a href="">No Oncológico</a>
     			</li>
 			</ul>
     	</li>
@@ -42,11 +42,8 @@
 @endsection
 @section('content')
 <div class="wrapper wrapper-content">
-	<div class="row  border-bottom white-bg dashboard-header">
+	<div class="ibox float-e-margins>
 		<div class="row">
-			<div class="form-group col-sm-2">
-        		<input type="text" class="form-control input-sm" name="num_historia" placeholder="N° Historia">	
-			</div> 
 			<div class="form-group col-sm-2">
         		<input type="text" class="form-control input-sm" name="cedula" placeholder="C.I">	
 			</div> 
@@ -73,7 +70,6 @@
         	<div class="col-sm-3 m-t-xs">
         		<label> <input type="checkbox" class="i-checks"> Oncológico</label>
         	</div>
-        	<button class="btn btn-primary pull-right" type="submit">Save changes</button>
 	</div>
 </div>
 @endsection

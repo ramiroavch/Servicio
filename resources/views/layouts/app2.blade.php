@@ -19,6 +19,7 @@
 
     <!-- Gritter -->
     <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    @yield('includes')
 
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -30,12 +31,7 @@
         <nav class="navbar-default navbar-static-side" role="navigation"> <!-- menu izquierdo -->
             <div class="sidebar-collapse">
                 <ul class="nav metismenu" id="side-menu">
-                    <li class="active">
-                        <a href="layouts.html"><i class="fa fa-edit"></i><span class="nav-label">Historias</span></a>
-                    </li>
-                    <li>
-                        <a href="metrics.html"><i class="fa fa-files-o"></i> <span class="nav-label">Controles</span>  </a>
-                    </li>
+                    @yield('Menu')
                 </ul>
             </div>
         </nav>
@@ -50,16 +46,32 @@
                     </div>
                     <ul class="nav navbar-top-links navbar-right">
                         <li>
-                            <a href="login.html">
-                                <i class="fa fa-sign-out"></i>Log out
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
                             </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                            </form>
                         </li>
                     </ul>
                 </nav>
             </div>
-            <div class="row  border-bottom white-bg dashboard-header"> <!-- cuerpo de la pagina-->
-                @yield('content')
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    @yield('title')
+                    <ol class="breadcrumb">
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+                </div>
             </div>
+                
+             <!-- cuerpo de la pagina-->
+                @yield('content')
+            
         </div>
 
 
@@ -118,6 +130,7 @@
 
     <!-- Toastr -->
     <script src="js/plugins/toastr/toastr.min.js"></script>
+    @yield('mainscript')
 
 
 
